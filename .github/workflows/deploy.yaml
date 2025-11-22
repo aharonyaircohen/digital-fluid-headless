@@ -41,5 +41,5 @@ jobs:
           protocol: ftps
           port: ${{ secrets.FTP_PORT }}
           local-dir: dist/
-          server-dir: /domains/dfh.thedigitalreality.net/public_html
+          server-dir: /domains/dfh.thedigitalreality.net/public_html/
           dangerous-clean-slate: true
