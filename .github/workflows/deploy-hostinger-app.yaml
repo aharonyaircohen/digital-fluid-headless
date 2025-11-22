@@ -1,0 +1,45 @@
+name: Deploy to Hostinger App
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # שלב 1: משיכת הריפו
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # שלב 2: התקנת Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # שלב 3: התקנת חבילות
+      - name: Install dependencies
+        run: npm ci
+
+      # שלב 4: Build עם משתני סביבה של Vite
+      - name: Build project
+        run: npm run build
+        env:
+          VITE_WPGRAPHQL_ENDPOINT: ${{ secrets.VITE_WPGRAPHQL_ENDPOINT }}
+
+      # שלב 5: העלאה ל-Hostinger דרך FTPS
+      - name: Deploy to Hostinger via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: ${{ secrets.FTP_PORT }}
+          local-dir: dist/
+          server-dir: ./app/
+          dangerous-clean-slate: true

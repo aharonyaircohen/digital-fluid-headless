@@ -1,0 +1,182 @@
+.mobile-menu__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: color-mix(in srgb, var(--theme-surface-soft) 88%, transparent);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 180ms ease;
+}
+
+.mobile-menu__overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.mobile-menu {
+  position: fixed;
+  inset-block: 0;
+  inset-inline-end: 0;
+  inset-inline-start: auto;
+  z-index: 40;
+  width: 18rem;
+  max-width: 90vw;
+  background: var(--theme-surface-soft);
+  border-inline-start: 1px solid var(--theme-border-soft);
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--ocean-900) 80%, transparent);
+  transform: translateX(105%);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: transform 200ms ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu.is-open {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+:dir(rtl) .mobile-menu {
+  transform: translateX(-105%);
+}
+
+:dir(rtl) .mobile-menu.is-open {
+  transform: translateX(0);
+}
+
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--theme-border-soft);
+  background: var(--theme-surface-muted);
+}
+
+.mobile-menu__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.mobile-menu__micro {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-300);
+}
+
+.mobile-menu__brand {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--theme-text-primary);
+}
+
+.mobile-menu__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--theme-border-soft);
+  background: var(--theme-surface-muted);
+  color: var(--theme-text-primary);
+  cursor: pointer;
+  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.mobile-menu__close:hover {
+  color: var(--aqua-200);
+  border-color: var(--theme-border-strong);
+  background: var(--theme-surface-hover);
+  transform: translateY(-1px);
+}
+
+.mobile-menu__close:focus-visible {
+  outline: 2px solid var(--aqua-200);
+  outline-offset: 2px;
+}
+
+.mobile-menu__nav {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+}
+
+.mobile-menu__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.mobile-menu__section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--theme-text-muted);
+}
+
+.mobile-menu__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-menu__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border-radius: 0.9rem;
+  border: 1px solid var(--theme-border-soft);
+  background: var(--theme-surface-soft);
+  color: var(--theme-text-primary);
+  text-decoration: none;
+  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.mobile-menu__link:hover {
+  color: var(--aqua-200);
+  border-color: var(--theme-border-strong);
+  background: var(--theme-surface-hover);
+  transform: translateY(-1px);
+}
+
+.mobile-menu__link:focus-visible {
+  outline: 2px solid var(--aqua-200);
+  outline-offset: 2px;
+}
+
+.mobile-menu__link--button {
+  border: 1px solid var(--theme-border-soft);
+  background: var(--theme-surface-soft);
+  cursor: pointer;
+}
+
+.mobile-menu__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ocean-700);
+}
+
+.mobile-menu__divider {
+  height: 1px;
+  background: var(--theme-divider);
+}
+
+[data-theme="light"] .mobile-menu__link:hover {
+  color: var(--ocean-700);
+  border-color: var(--ocean-700);
+  background: color-mix(in srgb, var(--ocean-700) 12%, var(--theme-surface-soft) 88%);
+}

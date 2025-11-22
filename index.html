@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>המציאות הדיגיטלית</title>
+    <script>
+      (() => {
+        const storageKey = "ui-theme-preference";
+        const getStored = () => {
+          try {
+            const raw = localStorage.getItem(storageKey);
+            if (raw === "light" || raw === "dark" || raw === "system") return raw;
+          } catch {
+            return null;
+          }
+          return null;
+        };
+        const getSystemTheme = () => (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        const mode = getStored() ?? "system";
+        const resolved = mode === "system" ? getSystemTheme() : mode;
+        const root = document.documentElement;
+        root.setAttribute("data-theme", resolved);
+        root.style.colorScheme = resolved;
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

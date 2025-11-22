@@ -1,0 +1,32 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "urql";
+import App from "./App";
+import "./styles/globals.css";
+import { AuthProvider } from "./auth/AuthContext";
+import { LanguageProvider } from "./i18n";
+import { graphqlClientPublic } from "./graphql/client";
+import { ThemeProvider } from "./theme";
+
+const rootElement = document.getElementById("root");
+
+if (!rootElement) {
+  throw new Error("Root element with id 'root' was not found in the document.");
+}
+
+ReactDOM.createRoot(rootElement).render(
+  <React.StrictMode>
+    <Provider value={graphqlClientPublic}>
+      <LanguageProvider>
+        <ThemeProvider>
+          <AuthProvider>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </AuthProvider>
+        </ThemeProvider>
+      </LanguageProvider>
+    </Provider>
+  </React.StrictMode>
+);

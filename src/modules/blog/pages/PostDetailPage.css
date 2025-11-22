@@ -1,0 +1,408 @@
+.post-content {
+  color: var(--neutral-d-100);
+  line-height: 1.85;
+  word-break: break-word;
+  max-width: 42rem;
+  margin-inline: auto;
+  padding-block: 0.5rem;
+  gap: 1.6rem;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  color: var(--gold-300) !important;
+  margin-block: 1.2rem 0.75rem;
+  line-height: 1.25;
+}
+
+.post-content h1 *,
+.post-content h2 *,
+.post-content h3 *,
+.post-content h4 *,
+.post-content h5 *,
+.post-content h6 * {
+  color: var(--gold-300) !important;
+}
+
+.post-content h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.post-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-bottom: 1px solid color-mix(in srgb, var(--aqua-400) 18%, transparent);
+  padding-bottom: 0.4rem;
+  margin-top: 1.6rem;
+}
+
+.post-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.3rem;
+}
+
+.post-content h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.post-content h5 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 1.1rem;
+}
+
+.post-content h6 {
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.post-content p {
+  margin-block: 1.35rem;
+}
+
+.post-content ul,
+.post-content ol {
+  margin-block: 1.25rem;
+  padding-inline-start: 1.6rem;
+}
+
+.post-content li {
+  margin-block: 0.45rem;
+  color: var(--neutral-d-100);
+}
+
+.post-content a {
+  color: var(--neutral-d-600);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--neutral-d-600) 30%, transparent);
+  text-decoration-thickness: 2px;
+}
+
+.post-content a:hover {
+  color: var(--ocean-900);
+}
+
+.post-content strong {
+  color: var(--neutral-d-50);
+  font-weight: 700;
+}
+
+.post-content em {
+  color: var(--neutral-d-100);
+}
+
+.post-content blockquote {
+  position: relative;
+  margin: 1.4rem 0;
+  padding: 1.1rem 1.25rem 1.1rem 1.4rem;
+  border-inline-start: 4px solid rgba(124, 232, 255, 0.45);
+  background: linear-gradient(135deg, rgba(8, 19, 36, 0.75), rgba(12, 28, 50, 0.75));
+  border-radius: 0.85rem;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.post-content blockquote::before {
+  content: "“";
+  position: absolute;
+  top: 0.6rem;
+  inset-inline-start: 0.6rem;
+  color: color-mix(in srgb, var(--aqua-400) 60%, transparent);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.post-content code {
+  background: color-mix(in srgb, var(--ocean-800) 80%, transparent);
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.35rem;
+  color: var(--neutral-d-50);
+  font-size: 0.9em;
+}
+
+.post-content img {
+  max-width: 100%;
+  border-radius: 0.9rem;
+  display: block;
+  margin: 1.2rem auto;
+  border: 1px solid color-mix(in srgb, var(--neutral-d-50) 5%, transparent);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.post-content hr {
+  margin: 1.8rem 0;
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--aqua-400) 60%, transparent), transparent);
+}
+
+.post-content pre {
+  padding: 1rem;
+  background: color-mix(in srgb, var(--ocean-900) 95%, transparent);
+  border-radius: 0.9rem;
+  overflow-x: auto;
+  border: 1px solid color-mix(in srgb, var(--neutral-d-50) 6%, transparent);
+}
+
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  display: block;
+  overflow-x: auto;
+  border: 1px solid color-mix(in srgb, var(--neutral-d-50) 8%, transparent);
+  border-radius: 0.75rem;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+  background: color-mix(in srgb, var(--ocean-800) 65%, transparent);
+  backdrop-filter: blur(2px);
+}
+
+.post-panel {
+  position: relative;
+  overflow: hidden;
+  background: var(--theme-section-background);
+  background-attachment: local;
+  color: var(--theme-text-primary);
+  isolation: isolate;
+}
+
+.post-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 25% 15%, color-mix(in srgb, var(--aqua-400) 12%, transparent), transparent 40%),
+    radial-gradient(circle at 80% 10%, color-mix(in srgb, var(--violet-400) 12%, transparent), transparent 40%),
+    radial-gradient(circle at 30% 85%, color-mix(in srgb, var(--aqua-400) 8%, transparent), transparent 40%);
+  background-repeat: no-repeat;
+  background-size: 140% 140%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.post-content thead {
+  background: color-mix(in srgb, var(--ocean-900) 80%, transparent);
+}
+
+.post-content th,
+.post-content td {
+  padding: 0.85rem 0.75rem;
+  text-align: start;
+  border-bottom: 1px solid color-mix(in srgb, var(--neutral-d-50) 6%, transparent);
+  color: var(--neutral-d-100);
+  font-size: 0.95rem;
+}
+
+.post-content th {
+  font-weight: 700;
+  color: var(--neutral-d-50);
+}
+
+.post-content tbody tr:nth-child(odd) {
+  background: color-mix(in srgb, var(--ocean-800) 55%, transparent);
+}
+
+.post-content tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--ocean-700) 35%, transparent);
+}
+
+.post-hero {
+  border-color: var(--theme-border-soft);
+  background: linear-gradient(
+      to bottom right,
+      color-mix(in srgb, var(--ocean-900) 90%, transparent),
+      color-mix(in srgb, var(--ocean-800) 85%, transparent),
+      color-mix(in srgb, var(--ocean-700) 80%, transparent)
+    ),
+    var(--surface-glow-2);
+}
+
+.post-meta {
+  color: var(--theme-text-secondary);
+}
+
+.post-category-chip {
+  background: color-mix(in srgb, var(--theme-surface-soft) 85%, transparent);
+  color: var(--ocean-700);
+}
+
+.post-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 0.8rem;
+  border: 1px solid var(--theme-border-soft);
+  padding: 0.6rem 0.9rem;
+  background: var(--theme-surface-soft);
+  color: var(--theme-text-primary);
+  font-size: 0.95rem;
+  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.post-back-link:hover {
+  color: var(--ocean-800);
+  border-color: var(--ocean-800);
+  background: color-mix(in srgb, var(--ocean-800) 12%, var(--theme-surface-soft) 88%);
+}
+
+.post-back-link:focus-visible {
+  outline: 2px solid var(--aqua-200);
+  outline-offset: 2px;
+}
+
+.post-message {
+  border-radius: 1rem;
+  border: 1px solid var(--theme-border-soft);
+  background: var(--theme-surface-soft);
+  padding: 1.25rem;
+  color: var(--theme-text-primary);
+}
+
+.post-message__title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--gold-300);
+}
+
+.post-message__body {
+  margin-top: 0.35rem;
+  color: var(--theme-text-secondary);
+}
+
+.post-message--error {
+  border-color: color-mix(in srgb, var(--ocean-700) 40%, transparent);
+}
+
+[data-theme="light"] .post-hero {
+  background: color-mix(in srgb, var(--neutral-d-50) 92%, var(--ocean-700) 8%);
+}
+
+[data-theme="light"] .post-meta {
+  color: var(--theme-text-muted);
+}
+
+[data-theme="light"] .post-category-chip {
+  background: color-mix(in srgb, var(--neutral-d-100) 85%, var(--ocean-700) 15%);
+  color: var(--ocean-700);
+}
+
+[data-theme="light"] .post-back-link {
+  background: color-mix(in srgb, var(--neutral-d-50) 92%, var(--ocean-700) 8%);
+  color: var(--ocean-700);
+  border-color: var(--theme-border-soft);
+}
+
+[data-theme="light"] .post-message {
+  background: color-mix(in srgb, var(--neutral-d-50) 92%, var(--ocean-700) 8%);
+  color: var(--theme-text-primary);
+  border-color: var(--theme-border-soft);
+}
+
+[data-theme="light"] .post-message__title {
+  color: var(--ocean-700);
+}
+
+[data-theme="light"] .post-message--error {
+  border-color: color-mix(in srgb, var(--ocean-700) 35%, transparent);
+}
+
+[data-theme="light"] .post-message__body {
+  color: var(--theme-text-secondary);
+}
+
+[data-theme="light"] .post-content {
+  color: var(--theme-text-primary);
+}
+
+[data-theme="light"] .post-content h1,
+[data-theme="light"] .post-content h2,
+[data-theme="light"] .post-content h3,
+[data-theme="light"] .post-content h4,
+[data-theme="light"] .post-content h5,
+[data-theme="light"] .post-content h6,
+[data-theme="light"] .post-content h1 *,
+[data-theme="light"] .post-content h2 *,
+[data-theme="light"] .post-content h3 *,
+[data-theme="light"] .post-content h4 *,
+[data-theme="light"] .post-content h5 *,
+[data-theme="light"] .post-content h6 * {
+  color: var(--ocean-600) !important;
+}
+
+[data-theme="light"] .post-content strong {
+  color: var(--ocean-800);
+}
+
+[data-theme="light"] .post-content em {
+  color: var(--theme-text-secondary);
+}
+
+[data-theme="light"] .post-content a {
+  color: var(--neutral-d-600);
+  text-decoration-color: color-mix(in srgb, var(--neutral-d-600) 40%, transparent);
+}
+
+[data-theme="light"] .post-content a:hover {
+  color: var(--ocean-900);
+}
+
+[data-theme="light"] .post-content blockquote {
+  background: color-mix(in srgb, var(--neutral-d-50) 92%, var(--ocean-700) 8%);
+  border-inline-start-color: color-mix(in srgb, var(--ocean-800) 60%, transparent);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .post-content blockquote::before {
+  color: color-mix(in srgb, var(--ocean-800) 65%, transparent);
+}
+
+[data-theme="light"] .post-content code {
+  background: color-mix(in srgb, var(--neutral-d-100) 85%, var(--ocean-700) 15%);
+  color: var(--ocean-800);
+}
+
+[data-theme="light"] .post-content pre {
+  background: color-mix(in srgb, var(--neutral-d-50) 90%, var(--ocean-700) 10%);
+  border-color: color-mix(in srgb, var(--neutral-d-300) 40%, transparent);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .post-content table {
+  background: color-mix(in srgb, var(--neutral-d-50) 92%, var(--ocean-700) 8%);
+  border-color: color-mix(in srgb, var(--neutral-d-300) 60%, transparent);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .post-content thead {
+  background: color-mix(in srgb, var(--neutral-d-100) 88%, var(--ocean-700) 12%);
+}
+
+[data-theme="light"] .post-content th,
+[data-theme="light"] .post-content td {
+  color: var(--ocean-800);
+  border-bottom-color: color-mix(in srgb, var(--neutral-d-300) 50%, transparent);
+}
+
+[data-theme="light"] .post-content tbody tr:nth-child(odd) {
+  background: color-mix(in srgb, var(--neutral-d-50) 90%, var(--ocean-700) 10%);
+}
+
+[data-theme="light"] .post-content tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--neutral-d-50) 94%, var(--ocean-700) 6%);
+}
+
+[data-theme="light"] .post-panel {
+  background: color-mix(in srgb, var(--neutral-d-50) 90%, var(--ocean-700) 10%);
+  border-color: var(--theme-border-soft);
+}
+
+[data-theme="light"] .post-content p,
+[data-theme="light"] .post-content li {
+  color: var(--ocean-800);
+}

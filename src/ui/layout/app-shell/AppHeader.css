@@ -1,0 +1,71 @@
+.app-header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--theme-border-soft);
+  background: var(--theme-surface-soft);
+  backdrop-filter: blur(10px);
+}
+
+.app-header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.app-header__brand {
+  color: var(--gold-300);
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+}
+
+.app-header__brand:focus-visible {
+  outline: 2px solid var(--aqua-200);
+  outline-offset: 3px;
+}
+
+  .app-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+.app-header__menu-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.8rem;
+  border: 1px solid var(--theme-border-soft);
+  background: var(--theme-surface-muted);
+  color: var(--theme-text-primary);
+  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.app-header__menu-button:hover {
+  color: var(--aqua-200);
+  border-color: var(--theme-border-strong);
+  background: var(--theme-surface-hover);
+  transform: translateY(-1px);
+}
+
+  .app-header__menu-button:focus-visible {
+    outline: 2px solid var(--aqua-200);
+    outline-offset: 2px;
+  }
+
+  [data-theme="light"] .app-header__brand {
+    color: var(--ocean-600);
+  }
+
+@media (min-width: 768px) {
+  .app-header__menu-button {
+    display: none;
+  }
+}

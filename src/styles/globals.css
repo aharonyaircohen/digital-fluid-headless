@@ -1,0 +1,333 @@
+@config "../../tailwind.config.ts";
+
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600&family=Space+Grotesk:wght@400;600&display=swap");
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Theme palette from design-system.md */
+    --ocean-900: #050d1c;
+    --ocean-800: #0a1628;
+    --ocean-700: #0f1e33;
+    --ocean-600: #14273f;
+
+    --aqua-400: #7ce8ff;
+    --aqua-300: #9deeff;
+    --aqua-200: #b6f4ff;
+
+    --violet-400: #a79dff;
+    --violet-300: #c7c0ff;
+
+    --neutral-d-50: #f7fbff;
+    --neutral-d-100: #e3e9f4;
+    --neutral-d-200: #cfd7e6;
+    --neutral-d-300: #b7c2d6;
+    --neutral-d-600: #5c6473;
+    --neutral-d-700: #3f4757;
+    --neutral-d-800: #2b3242;
+    --neutral-d-900: #181f2b;
+
+    --gold-500: #e8b46a;
+    --gold-400: #f2c98b;
+    --gold-300: #ffdfae;
+
+    --surface-glow-1: radial-gradient(circle at 30% 20%, rgba(124, 232, 255, 0.12), transparent 38%);
+    --surface-glow-2: radial-gradient(circle at 75% 10%, rgba(167, 157, 255, 0.12), transparent 38%);
+    --surface-glow-3: radial-gradient(circle at 30% 85%, rgba(124, 232, 255, 0.08), transparent 40%);
+
+    --theme-text-primary: var(--neutral-d-50);
+    --theme-text-secondary: var(--neutral-d-200);
+    --theme-text-muted: var(--neutral-d-200);
+    --theme-surface-soft: color-mix(in srgb, var(--ocean-900) 85%, transparent);
+    --theme-surface-muted: color-mix(in srgb, var(--ocean-900) 78%, transparent);
+    --theme-surface-hover: color-mix(in srgb, var(--ocean-800) 70%, transparent);
+    --theme-surface-accent: color-mix(in srgb, var(--ocean-700) 70%, transparent);
+    --theme-border-soft: color-mix(in srgb, var(--neutral-d-700) 70%, transparent);
+    --theme-border-strong: color-mix(in srgb, var(--aqua-300) 60%, transparent);
+    --theme-app-background: radial-gradient(
+        circle at 50% 45%,
+        color-mix(in srgb, var(--ocean-700) 20%, transparent),
+        color-mix(in srgb, var(--ocean-900) 85%, transparent) 55%,
+        color-mix(in srgb, var(--ocean-900) 94%, transparent) 85%
+      ),
+      linear-gradient(to bottom, var(--ocean-900) 0%, var(--ocean-800) 40%, var(--ocean-800) 100%);
+    --theme-section-background: linear-gradient(
+      to bottom right,
+      color-mix(in srgb, var(--ocean-900) 90%, transparent),
+      color-mix(in srgb, var(--ocean-800) 85%, transparent),
+      color-mix(in srgb, var(--ocean-700) 80%, transparent)
+    );
+    --theme-card-background: linear-gradient(
+      to bottom right,
+      color-mix(in srgb, var(--ocean-800) 75%, var(--ocean-700) 25%),
+      color-mix(in srgb, var(--ocean-700) 70%, var(--ocean-600) 30%),
+      color-mix(in srgb, var(--ocean-700) 65%, var(--aqua-400) 10%)
+    );
+    --theme-divider: linear-gradient(to right, transparent, color-mix(in srgb, var(--aqua-400) 60%, transparent), transparent);
+    color-scheme: dark;
+  }
+
+  :root[data-theme="light"] {
+    --theme-text-primary: var(--neutral-d-900);
+    --theme-text-secondary: var(--neutral-d-700);
+    --theme-text-muted: var(--neutral-d-700);
+    --theme-surface-soft: color-mix(in srgb, var(--neutral-d-50) 92%, var(--ocean-600) 8%);
+    --theme-surface-muted: color-mix(in srgb, var(--neutral-d-50) 95%, var(--ocean-600) 5%);
+    --theme-surface-hover: color-mix(in srgb, var(--neutral-d-100) 90%, var(--ocean-600) 10%);
+    --theme-surface-accent: color-mix(in srgb, var(--aqua-300) 18%, var(--neutral-d-50) 82%);
+    --theme-border-soft: color-mix(in srgb, var(--neutral-d-300) 70%, transparent);
+    --theme-border-strong: color-mix(in srgb, var(--aqua-300) 65%, transparent);
+    --theme-app-background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--neutral-d-50) 90%, var(--ocean-700) 10%) 0%,
+      color-mix(in srgb, var(--neutral-d-50) 85%, var(--ocean-600) 15%) 45%,
+      color-mix(in srgb, var(--neutral-d-50) 82%, var(--ocean-600) 18%) 100%
+    );
+    --theme-section-background: linear-gradient(
+      to bottom right,
+      color-mix(in srgb, var(--neutral-d-50) 96%, var(--aqua-300) 4%),
+      color-mix(in srgb, var(--neutral-d-50) 94%, var(--ocean-600) 6%),
+      color-mix(in srgb, var(--neutral-d-100) 92%, var(--ocean-600) 8%)
+    );
+    --theme-card-background: linear-gradient(
+      to bottom right,
+      color-mix(in srgb, var(--neutral-d-50) 96%, var(--ocean-600) 4%),
+      color-mix(in srgb, var(--neutral-d-50) 94%, var(--aqua-300) 6%),
+      color-mix(in srgb, var(--neutral-d-100) 92%, var(--ocean-600) 8%)
+    );
+    --theme-divider: linear-gradient(to right, transparent, color-mix(in srgb, var(--neutral-d-300) 75%, transparent), transparent);
+  }
+
+  html,
+  body {
+    min-height: 100%;
+    background: var(--theme-app-background);
+    color: var(--theme-text-primary);
+    font-family: "Heebo", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-attachment: fixed;
+    color: var(--theme-text-primary);
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl font-semibold tracking-tight mb-4;
+    color: var(--gold-300);
+    font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-semibold mb-3;
+    color: var(--gold-300);
+    font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  h3 {
+    @apply text-2xl font-medium mb-2;
+    color: var(--gold-300);
+  }
+
+  h4 {
+    @apply text-xl font-medium mb-2;
+    color: var(--gold-300);
+  }
+
+  p {
+    @apply text-base leading-relaxed text-neutral-d-200 mb-4;
+  }
+
+  a {
+    @apply border-b border-transparent transition-colors duration-200 ease-out;
+    color: var(--aqua-300);
+  }
+
+  a:hover {
+    color: var(--aqua-200);
+    border-bottom-color: var(--aqua-200);
+  }
+
+  .theme-transition body,
+  .theme-transition .app-shell,
+  .theme-transition .section-block,
+  .theme-transition .gradient-surface,
+  .theme-transition .card-surface,
+  .theme-transition .app-header,
+  .theme-transition .mobile-menu,
+  .theme-transition .mobile-menu__overlay,
+  .theme-transition .desktop-nav__link,
+  .theme-transition .desktop-nav__button,
+  .theme-transition .mobile-menu__link,
+  .theme-transition .theme-selector__option {
+    transition: background-color 240ms ease, color 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+  }
+}
+
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6 {
+  color: var(--ocean-600);
+}
+
+[data-theme="light"] a {
+  color: var(--ocean-700);
+}
+
+[data-theme="light"] a:hover {
+  color: var(--ocean-900);
+  border-bottom-color: var(--ocean-900);
+}
+
+@layer components {
+  .app-shell {
+    @apply min-h-screen flex flex-col;
+    background: var(--theme-app-background);
+    color: var(--theme-text-primary);
+  }
+
+  .page-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-10 py-10 md:py-14;
+  }
+
+  .section-block {
+    @apply relative rounded-card border p-6 md:p-8 backdrop-blur-sm shadow-[0_18px_40px_rgba(0,0,0,0.35)];
+    border-color: var(--theme-border-soft);
+    background: var(--theme-section-background);
+  }
+
+  .gradient-surface {
+    position: relative;
+    overflow: hidden;
+    background: var(--theme-section-background);
+  }
+
+  .gradient-surface::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--surface-glow-1), var(--surface-glow-2);
+    pointer-events: none;
+  }
+
+  .card-surface {
+    position: relative;
+    overflow: hidden;
+    background: var(--theme-card-background);
+    color: var(--theme-text-primary);
+  }
+
+  .card-surface::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--surface-glow-1), var(--surface-glow-2), var(--surface-glow-3);
+    pointer-events: none;
+    mix-blend-mode: screen;
+  }
+
+  .divider-line {
+    @apply h-px w-full my-6;
+    background: var(--theme-divider);
+  }
+
+  .pill-tag {
+    @apply inline-flex items-center rounded-pill px-3 py-1 text-xs tracking-wide uppercase text-gold-300;
+    background: color-mix(in srgb, var(--theme-surface-soft) 80%, transparent);
+  }
+
+  .micro-label {
+    @apply text-xs uppercase tracking-wide text-gold-300;
+  }
+
+
+  .hover-glow {
+    @apply transition duration-200 ease-out hover:-translate-y-0.5 hover:shadow-elevated;
+    border-color: var(--theme-border-soft);
+  }
+
+  .hover-glow:hover {
+    border-color: color-mix(in srgb, var(--aqua-300) 70%, transparent);
+  }
+}
+
+@layer utilities {
+  .text-ocean-900 { color: var(--ocean-900); }
+  .text-ocean-800 { color: var(--ocean-800); }
+  .text-ocean-700 { color: var(--ocean-700); }
+  .text-ocean-600 { color: var(--ocean-600); }
+  .text-aqua-400 { color: var(--aqua-400); }
+  .text-aqua-300 { color: var(--aqua-300); }
+  .text-aqua-200 { color: var(--aqua-200); }
+  .text-violet-400 { color: var(--violet-400); }
+  .text-violet-300 { color: var(--violet-300); }
+  .text-neutral-d-50 { color: var(--neutral-d-50); }
+  .text-neutral-d-100 { color: var(--neutral-d-100); }
+  .text-neutral-d-200 { color: var(--neutral-d-200); }
+  .text-neutral-d-300 { color: var(--neutral-d-300); }
+  .text-neutral-d-600 { color: var(--neutral-d-600); }
+  .text-neutral-d-700 { color: var(--neutral-d-700); }
+  .text-neutral-d-800 { color: var(--neutral-d-800); }
+  .text-neutral-d-900 { color: var(--neutral-d-900); }
+  .text-gold-500 { color: var(--gold-500); }
+  .text-gold-400 { color: var(--gold-400); }
+  .text-gold-300 { color: var(--gold-300); }
+
+  .bg-ocean-900 { background-color: var(--ocean-900); }
+  .bg-ocean-800 { background-color: var(--ocean-800); }
+  .bg-ocean-700 { background-color: var(--ocean-700); }
+  .bg-ocean-600 { background-color: var(--ocean-600); }
+  .bg-aqua-400 { background-color: var(--aqua-400); }
+  .bg-aqua-300 { background-color: var(--aqua-300); }
+  .bg-aqua-200 { background-color: var(--aqua-200); }
+  .bg-violet-400 { background-color: var(--violet-400); }
+  .bg-violet-300 { background-color: var(--violet-300); }
+  .bg-neutral-d-50 { background-color: var(--neutral-d-50); }
+  .bg-neutral-d-100 { background-color: var(--neutral-d-100); }
+  .bg-neutral-d-200 { background-color: var(--neutral-d-200); }
+  .bg-neutral-d-300 { background-color: var(--neutral-d-300); }
+  .bg-neutral-d-600 { background-color: var(--neutral-d-600); }
+  .bg-neutral-d-700 { background-color: var(--neutral-d-700); }
+  .bg-neutral-d-800 { background-color: var(--neutral-d-800); }
+  .bg-neutral-d-900 { background-color: var(--neutral-d-900); }
+  .bg-gold-500 { background-color: var(--gold-500); }
+  .bg-gold-400 { background-color: var(--gold-400); }
+  .bg-gold-300 { background-color: var(--gold-300); }
+
+  [data-theme="light"] .text-neutral-d-50,
+  [data-theme="light"] .text-neutral-d-100,
+  [data-theme="light"] .text-neutral-d-200 {
+    color: var(--neutral-d-900);
+  }
+
+  [data-theme="light"] .text-neutral-d-300 {
+    color: var(--neutral-d-800);
+  }
+
+  [data-theme="light"] .text-neutral-d-600 {
+    color: var(--neutral-d-700);
+  }
+
+  [data-theme="light"] .bg-ocean-900,
+  [data-theme="light"] .bg-ocean-800,
+  [data-theme="light"] .bg-ocean-700 {
+    background-color: color-mix(in srgb, var(--neutral-d-50) 88%, var(--ocean-700) 12%);
+  }
+
+  [data-theme="light"] .bg-neutral-d-900,
+  [data-theme="light"] .bg-neutral-d-800,
+  [data-theme="light"] .bg-neutral-d-700 {
+    background-color: color-mix(in srgb, var(--neutral-d-50) 90%, var(--neutral-d-900) 10%);
+  }
+}
