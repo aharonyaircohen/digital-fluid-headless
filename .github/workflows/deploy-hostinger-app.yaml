@@ -42,5 +42,5 @@ jobs:
           protocol: ftps
           port: ${{ secrets.FTP_PORT }}
           local-dir: dist/
-          server-dir: ./app/
+          server-dir: ./
           dangerous-clean-slate: true

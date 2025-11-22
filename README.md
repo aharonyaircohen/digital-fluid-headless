@@ -13,12 +13,12 @@ Modern React + TypeScript frontend for a headless WordPress backend (WPGraphQL).
 - Quality: `npm run lint` and `npm run typecheck`.
 
 ## Architecture
-- Tech: React 18, TypeScript (strict), Vite, React Router, Apollo/GraphQL client (WPGraphQL), Tailwind for design tokens.
+- Tech: React 18, TypeScript (strict), Vite, React Router, URQL GraphQL client (WPGraphQL), Tailwind for design tokens.
 - Data flow: UI ➜ Hooks ➜ Services ➜ API ➜ Backend; responses return through the same layers with mapping/validation.
 - Folders (`src/`):
   - `main.tsx`, `App.tsx` – app bootstrap and shell routing host.
   - `config/` – environment/config helpers.
-  - `graphql/` – Apollo client and shared operations (`client.ts`, `queries/`).
+  - `graphql/` – URQL client and shared operations (`client.ts`, `queries/`).
   - `router/` – route definitions/guards.
   - `modules/` – feature modules (e.g., blog, courses): `components/` (presentational) and `pages/` (route-level wiring).
   - `ui/` – shared UI primitives/layouts.
