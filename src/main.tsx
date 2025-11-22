@@ -9,6 +9,9 @@ import { graphqlClientPublic } from "./graphql/client";
 import { ThemeProvider } from "./theme";
 
 const rootElement = document.getElementById("root");
+// Keep Router basename aligned with Vite base to support subpath deployments.
+const basename =
+  import.meta.env.BASE_URL.replace(/\/+$/, "") || "/";
 
 if (!rootElement) {
   throw new Error("Root element with id 'root' was not found in the document.");
@@ -19,7 +22,7 @@ ReactDOM.createRoot(rootElement).render(
     <Provider value={graphqlClientPublic}>
       <LanguageProvider>
         <ThemeProvider>
-          <BrowserRouter>
+          <BrowserRouter basename={basename}>
             <App />
           </BrowserRouter>
         </ThemeProvider>
