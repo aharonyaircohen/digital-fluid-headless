@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { AuthAction, NavLinkItem } from "./navigationTypes";
+import type { NavLinkItem } from "./navigationTypes";
 import { LanguageSelector } from "./LanguageSelector";
 import { ThemeSelector } from "./ThemeSelector";
 import "./DesktopNav.css";

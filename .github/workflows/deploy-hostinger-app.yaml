@@ -30,6 +30,7 @@ jobs:
         run: npm run build
         env:
           VITE_SERVER: ${{ secrets.VITE_SERVER }}
+          VITE_GQL: ${{ secrets.VITE_GQL }}
 
       # שלב 5: העלאה ל-Hostinger דרך FTPS
       - name: Deploy to Hostinger via FTPS
