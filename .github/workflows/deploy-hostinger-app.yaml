@@ -29,7 +29,7 @@ jobs:
       - name: Build project
         run: npm run build
         env:
-          VITE_WPGRAPHQL_ENDPOINT: ${{ secrets.VITE_WPGRAPHQL_ENDPOINT }}
+          VITE_SERVER: ${{ secrets.VITE_SERVER }}
 
       # שלב 5: העלאה ל-Hostinger דרך FTPS
       - name: Deploy to Hostinger via FTPS

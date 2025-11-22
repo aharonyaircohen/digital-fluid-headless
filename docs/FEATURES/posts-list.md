@@ -4,14 +4,14 @@
 - Demonstrate authenticated data fetching from the WordPress GraphQL endpoint by listing post titles.
 
 ## Requirements
-- Query `https://thedigitalreality.net/core/graphql` using Apollo Client.
+- Query `https://digital-fluid-headless.42web.io/wp/graphql` using Apollo Client.
 - Fetch post ids/slugs/titles/excerpt/date/featured image/primary category; render card grid with title, meta, excerpt, and call-to-action.
 - Surface loading, error, and empty states.
 - Keep fetched content as-is (no translations on titles/excerpts); local UI copy is localized.
 - Use cache-first behavior; no polling or client-side filtering; fetch all pages in 50-item batches using GraphQL pagination.
 
 ## Dependencies
-- Apollo client configuration (`src/graphql/client.ts`, `config/env.ts` with `VITE_WPGRAPHQL_ENDPOINT`).
+- Apollo client configuration (`src/graphql/client.ts`, `config/env.ts` with `VITE_SERVER`).
 - GraphQL document `src/graphql/queries/posts.ts`.
 - Blog feature types/hooks/services under `src/modules/blog/`.
 

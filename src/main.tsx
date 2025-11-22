@@ -4,7 +4,6 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "urql";
 import App from "./App";
 import "./styles/globals.css";
-import { AuthProvider } from "./auth/AuthContext";
 import { LanguageProvider } from "./i18n";
 import { graphqlClientPublic } from "./graphql/client";
 import { ThemeProvider } from "./theme";
@@ -20,11 +19,9 @@ ReactDOM.createRoot(rootElement).render(
     <Provider value={graphqlClientPublic}>
       <LanguageProvider>
         <ThemeProvider>
-          <AuthProvider>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-          </AuthProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
         </ThemeProvider>
       </LanguageProvider>
     </Provider>

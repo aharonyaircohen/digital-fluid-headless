@@ -1,20 +1,16 @@
 import { cacheExchange, createClient, debugExchange, fetchExchange } from "urql";
 import { config } from "../config/env";
+import { simpleGetExchange } from "./simpleGetExchange";
 
 const endpoint = config.wpGraphQLEndpoint || "/graphql";
 
 export const graphqlClientPublic = createClient({
   url: endpoint,
-  exchanges: [debugExchange, cacheExchange, fetchExchange],
+  exchanges: [debugExchange, cacheExchange, simpleGetExchange, fetchExchange],
   fetchOptions: () => ({
     credentials: "omit",
-  }),
-});
-
-export const graphqlClientAuth = createClient({
-  url: endpoint,
-  exchanges: [debugExchange, cacheExchange, fetchExchange],
-  fetchOptions: () => ({
-    credentials: "include",
+    headers: {
+      "Accept": "application/json",
+    },
   }),
 });

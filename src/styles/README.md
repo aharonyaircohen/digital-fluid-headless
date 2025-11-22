@@ -62,7 +62,7 @@ Provide a clean, opinionated starter for building modern headless WordPress fron
 
 #### 3.2. WPGraphQL integration
 
-* Single configuration file for API endpoint (env var, e.g. `VITE_WPGRAPHQL_ENDPOINT`)
+* Single configuration file for API endpoint (env var, e.g. `VITE_SERVER`)
 * Minimal GraphQL client (fetch/urql/apollo – but abstracted in a small utility)
 * Example queries:
 
@@ -142,7 +142,7 @@ v0.1.0 includes a basic AI spec file that defines:
 
 * Environment variables:
 
-  * `VITE_WPGRAPHQL_ENDPOINT` – required
+  * `VITE_SERVER` – required
 * WP side:
 
   * WPGraphQL installed and active

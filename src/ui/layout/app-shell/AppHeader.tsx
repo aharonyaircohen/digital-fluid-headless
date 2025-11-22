@@ -2,15 +2,13 @@ import { Link } from "react-router-dom";
 import { useLocale } from "../../../i18n";
 import { DesktopNav } from "./DesktopNav";
 import { MenuIcon } from "./NavIcons";
-import type { AuthAction, NavLinkItem } from "./navigationTypes";
+import type { NavLinkItem } from "./navigationTypes";
 import "./AppHeader.css";
 
 type AppHeaderProps = {
   brandLabel: string;
   menuLabel: string;
   primaryLinks: NavLinkItem[];
-  accountLink?: NavLinkItem;
-  authAction: AuthAction;
   onMenuOpen: () => void;
   isMenuOpen: boolean;
   onBrandClick?: () => void;
@@ -21,8 +19,6 @@ export function AppHeader({
   brandLabel,
   menuLabel,
   primaryLinks,
-  accountLink,
-  authAction,
   onMenuOpen,
   isMenuOpen,
   onBrandClick,
@@ -39,8 +35,6 @@ export function AppHeader({
         <div className="app-header__actions">
           <DesktopNav
             primaryLinks={primaryLinks}
-            accountLink={accountLink}
-            authAction={authAction}
             menuLabel={menuLabel}
           />
           <button

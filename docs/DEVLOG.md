@@ -23,7 +23,7 @@ Use this template for each entry:
 - **Future Steps**: Add tests for locale persistence and selector behavior; consider auto `dir` handling for mixed-language content blocks.
 
 ### Entry 2025-02-07
-- **Summary**: Routed dev GraphQL calls to same-origin `/api/graphql` and rewired the Vite proxy to hit the remote `/?graphql` endpoint, avoiding credentialed CORS failures; clarified env usage.
+- **Summary**: Routed dev GraphQL calls to same-origin `/wp/graphql` and rewired the Vite proxy to hit the remote `/?graphql` endpoint, avoiding credentialed CORS failures; clarified env usage.
 - **Files Modified**: `src/config/env.ts`, `.env.example`, `docs/ARCHITECTURE.md`, `docs/DEVLOG.md`, `vite.config.ts`
 - **Reasoning**: The WPGraphQL endpoint only works at `/?graphql` and returns `Access-Control-Allow-Origin: *`, so a same-origin proxy is required for credentialed requests during local dev.
-- **Future Steps**: Reuse the `/api/graphql` proxy pattern for any additional endpoints; ensure production hosting fronts the same path or adds its own reverse proxy.
+- **Future Steps**: Reuse the `/wp/graphql` proxy pattern for any additional endpoints; ensure production hosting fronts the same path or adds its own reverse proxy.

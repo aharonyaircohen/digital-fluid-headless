@@ -5,17 +5,3 @@ export type NavLinkItem = {
   label: string;
   icon?: ReactNode;
 };
-
-export type AuthAction =
-  | {
-      type: "login";
-      label: string;
-      to: string;
-      icon?: ReactNode;
-    }
-  | {
-      type: "logout";
-      label: string;
-      onLogout: () => void | Promise<void>;
-      icon?: ReactNode;
-    };

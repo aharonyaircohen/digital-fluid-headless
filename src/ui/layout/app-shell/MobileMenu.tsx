@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { AuthAction, NavLinkItem } from "./navigationTypes";
+import type { NavLinkItem } from "./navigationTypes";
 import { CloseIcon } from "./NavIcons";
 import { LanguageSelector } from "./LanguageSelector";
 import { ThemeSelector } from "./ThemeSelector";
@@ -11,10 +11,7 @@ type MobileMenuProps = {
   brandLabel: string;
   menuLabel: string;
   primaryLinks: NavLinkItem[];
-  accountLink?: NavLinkItem;
-  authAction: AuthAction;
   onClose: () => void;
-  accountLabel: string;
   menuId?: string;
   themeLabel: string;
   languageLabel: string;
@@ -25,10 +22,7 @@ export function MobileMenu({
   brandLabel,
   menuLabel,
   primaryLinks,
-  accountLink,
-  authAction,
   onClose,
-  accountLabel,
   menuId,
   themeLabel,
   languageLabel,
@@ -70,29 +64,6 @@ export function MobileMenu({
           </div>
 
           <div className="mobile-menu__divider" />
-
-          <div className="mobile-menu__section">
-            <span className="mobile-menu__section-label">{accountLabel}</span>
-            <div className="mobile-menu__links">
-              {accountLink ? (
-                <Link to={accountLink.to} className="mobile-menu__link" onClick={onClose}>
-                  {accountLink.icon ? <span className="mobile-menu__icon">{accountLink.icon}</span> : null}
-                  <span>{accountLink.label}</span>
-                </Link>
-              ) : null}
-              {authAction.type === "login" ? (
-                <Link to={authAction.to} className="mobile-menu__link" onClick={onClose}>
-                  {authAction.icon ? <span className="mobile-menu__icon">{authAction.icon}</span> : null}
-                  <span>{authAction.label}</span>
-                </Link>
-              ) : (
-                <button type="button" className="mobile-menu__link mobile-menu__link--button" onClick={() => void authAction.onLogout()}>
-                  {authAction.icon ? <span className="mobile-menu__icon">{authAction.icon}</span> : null}
-                  <span>{authAction.label}</span>
-                </button>
-              )}
-            </div>
-          </div>
 
           <div className="mobile-menu__section">
             <span className="mobile-menu__section-label">{languageLabel}</span>

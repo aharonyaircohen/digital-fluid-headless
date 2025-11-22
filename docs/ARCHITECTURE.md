@@ -13,8 +13,8 @@
   - Future-friendly for additional global state if required (e.g., Zustand/Redux) but not assumed.
 
 ### API Access
-- Local dev: React client calls same-origin `/graphql`; Vite proxies this path to the real WPGraphQL endpoint from `VITE_WPGRAPHQL_ENDPOINT` in `.env` (including its required `?graphql` search) to dodge CORS with credentials.
-- Prod/build: `VITE_WPGRAPHQL_ENDPOINT` must point to the live WPGraphQL URL (`https://thedigitalreality.net/core/?graphql` today); ensure the host serves that path directly or through its own reverse proxy.
+- Local dev: React client calls same-origin `/graphql`; Vite proxies this path to the real WPGraphQL endpoint from `VITE_SERVER` in `.env` (including its required `?graphql` search) to dodge CORS with credentials.
+- Prod/build: `VITE_SERVER` must point to the live WPGraphQL URL (`https://digital-fluid-headless.42web.io/wp/?graphql` today); ensure the host serves that path directly or through its own reverse proxy.
 
 ## Folder Structure
 - Root:

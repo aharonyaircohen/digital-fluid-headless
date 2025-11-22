@@ -6,25 +6,6 @@ export function PostsIcon() {
   );
 }
 
-export function CoursesIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-      <rect x="3" y="4" width="18" height="4" rx="1" />
-      <rect x="3" y="10" width="18" height="4" rx="1" />
-      <rect x="3" y="16" width="18" height="4" rx="1" />
-    </svg>
-  );
-}
-
-export function AccountIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-      <circle cx="12" cy="8" r="3" />
-      <path d="M4 20c0-2.761 3.582-5 8-5s8 2.239 8 5" />
-    </svg>
-  );
-}
-
 export function LoginIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
